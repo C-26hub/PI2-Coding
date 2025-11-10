@@ -68,8 +68,8 @@ Este projeto utiliza **npm** (mas você pode usar yarn ou pnpm se preferir).
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/[SEU_USUARIO]/[SEU_REPOSITORIO].git
-cd pi2-front
+git clone https://github.com/C-26hub/PI2-Front.git
+cd PI2-Front
 ```
 
 2. Instale as dependências:

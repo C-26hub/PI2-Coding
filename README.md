@@ -1,4 +1,4 @@
-# ![Logo Ecosy](./public/logo.svg) Ecosy - Gestão de Sementes
+# ![Logo Ecosy](./public/logo.svg) 
 
 O **Ecosy** é uma plataforma digital para a gestão, distribuição e rastreabilidade do programa de aquisição de **sementes crioulas** em Pernambuco.
 

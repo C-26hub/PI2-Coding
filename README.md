@@ -61,6 +61,13 @@ O front-end utiliza uma arquitetura baseada em **features** (Feature-Sliced Desi
 
 ```
 
+## ✅ Requisitos e Pré-requisitos
+
+Antes de rodar o front-end do **Ecosy**, verifique se sua máquina atende aos requisitos abaixo.
+
+**- Node.js**  
+**- Git**
+
 ## 🚀 Como Rodar o Projeto (Front-end)
 
 Este projeto utiliza **npm** (mas você pode usar yarn ou pnpm se preferir).

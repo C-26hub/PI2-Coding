@@ -108,13 +108,16 @@ export function LoginForm() {
             </div>
           </CardContent>
           <CardFooter>
+            <Link href="/dashboard" className="w-full  hover:bg-[#407554]">
             <Button
               variant="greenCustom"
-              type="submit" 
+              type="submit"
               className="w-full  hover:bg-[#407554]"
+              
             >
               Entrar
             </Button>
+            </Link>
           </CardFooter>
         </form>
       </Form>

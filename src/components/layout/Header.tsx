@@ -1,4 +1,3 @@
-// src/components/layout/Header.tsx
 "use client";
 
 import Link from "next/link";
@@ -24,7 +23,7 @@ const gestorLinks = [
   { href: "/beneficiarios", label: "Beneficiários" },
   { href: "/lotes", label: "Ciclo de Sementes" },
   { href: "/relatorios", label: "Relatórios" },
-  { href: "/configuracoes", label: "Configurações" }, // Geralmente gestor tem config
+  { href: "/configuracoes", label: "Configurações" },
 ];
 
 const tecnicoLinks = [
@@ -37,21 +36,11 @@ export function Header() {
   const pathname = usePathname();
 
   // --- DADOS MOCKADOS ---
-  // MUDE AQUI PARA TESTAR: "gestor" ou "tecnico"
   const user = {
     name: "Ana Cecília",
     email: "ana.cecilia@ipa.pe.gov.br",
-    role: "gestor" as "gestor" | "tecnico", // Simulando o nível de acesso
+    role: "gestor" as "gestor" | "tecnico",
   };
-
-  // Se quiser testar como Técnico, descomente abaixo:
-  /*
-  const user = {
-    name: "Jonas Pereira",
-    email: "jonas.pereira@ipa.pe.gov.br",
-    role: "tecnico" as "gestor" | "tecnico",
-  }
-  */
 
   const userInitials = user.name
     .split(" ")
@@ -60,7 +49,6 @@ export function Header() {
     .substring(0, 2)
     .toUpperCase();
 
-  // 2. Selecionamos a lista correta com base no papel
   const navLinks = user.role === "gestor" ? gestorLinks : tecnicoLinks;
 
   return (
@@ -68,15 +56,9 @@ export function Header() {
       <Link href="/dashboard">
         <Logo width={120} height={50} />
       </Link>
-      {/* Botão Mobile - DESATIVADO *
-      <Button variant="outline" size="icon" className="md:hidden">
-        <Menu className="h-4 w-4" />
-        <span className="sr-only">Toggle Menu</span>
-      </Button>
-      /}
 
       {/* Menu de Navegação Dinâmico */}
-      <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 ml-6">
+      <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 ml-6 h-full">
         {navLinks.map((link) => {
           const isActive = pathname.startsWith(link.href);
 
@@ -85,10 +67,14 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm font-medium transition-all h-full flex items-center border-b-3",
+                // --- ESTILIZAÇÃO BASE MANTIDA ---
+                "relative h-full flex items-center text-sm font-medium transition-colors text-[#2F2F2F]",               
+                // --- A ANIMAÇÃO DA LINHA ---
+                "after:content-[''] after:absolute after:left-0 after:bottom-5 after:h-[3px] after:bg-[#4D8965] after:transition-all after:duration-300",
+
                 isActive
-                  ? "border-[#4D8965] text-[#2F2F2F] font-semibold"
-                  : "border-transparent text-[#2F2F2F] hover:text-ecosy-green"
+                  ? "after:w-full font-semibold text-ecosy-green" 
+                  : "after:w-0 hover:after:w-full hover:text-ecosy-green"
               )}
             >
               {link.label}
@@ -123,7 +109,6 @@ export function Header() {
               <p className="text-xs leading-none text-muted-foreground">
                 {user.email}
               </p>
-              {/* Mostra o cargo no menu para facilitar o teste */}
               <p className="text-xs font-bold text-ecosy-green uppercase mt-1">
                 {user.role}
               </p>

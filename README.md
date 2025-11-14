@@ -84,9 +84,24 @@ cd PI2-Front
 ```bash
 npm install
 ```
-3. Configure as variáveis de ambiente: (*DESCONSIDERAR NO MOMENTO*)
+3. Configure as variáveis de ambiente: (A parte do mapa não funcionará sem isso.)
 
-Obs: Inicialmente, o projeto irá usar dados mockados no /services/, então não é necessário um .env para a API. Este passo será necessário quando o backend for integrado.
+Para que o mapa do dashboard funcione corretamente, é necessário configurar uma variável de ambiente.
+
+Na raiz do projeto, crie um arquivo chamado:
+
+```
+.env.local
+```
+Dentro desse arquivo, adicione a seguinte variável:
+
+```
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=
+```
+Após o sinal de =, insira a chave de API correspondente.
+⚠️ Importante: Entre em contato com Matt para obter a chave.
+
+
 
 4. Rode o servidor de desenvolvimento:
 

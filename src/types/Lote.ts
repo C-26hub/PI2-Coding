@@ -10,3 +10,16 @@ export interface Lote {
   dataCadastro: string; // Ex: "12/10/2025"
   status: LoteStatus;
 }
+
+export interface Entrega {
+  id: string;
+  beneficiario: string;
+  cidade: string;
+  tecnico: string;
+  status: "Pendente" | "Entregue";
+  dataEntrega?: string;
+}
+
+export interface LoteDetalhado extends Lote {
+  entregas: Entrega[];
+}

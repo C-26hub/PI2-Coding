@@ -24,7 +24,7 @@ export default async function LotesPage() {
   return (
     <>
       <Header />
-      <main className="flex flex-col h-[calc(100vh-80px)] p-4 md:p-8 pt-6 bg-[#F4F7F4]">
+      <main className="flex flex-col h-[calc(100vh-80px)] p-4 md:p-4 pt-6 bg-[#F4F7F4]">
         <div className="w-full max-w-[1200px] mx-auto flex flex-col flex-1">
           <Card className="border-none shadow-md flex-1 flex flex-col">
             <CardContent className="py-8">
